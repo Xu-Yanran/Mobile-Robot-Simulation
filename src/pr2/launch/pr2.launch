@@ -1,0 +1,3 @@
+<launch>
+	<include file="$(find pr2_gazebo)/launch/pr2_empty_world.launch"/>
+</launch>
