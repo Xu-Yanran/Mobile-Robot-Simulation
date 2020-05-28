@@ -1,5 +1,10 @@
 <?xml version="1.0"?> 
 <robot name="smartcar">
+  <gazebo>
+    <plugin name="differential_drive_controller" filename="libdiffdrive_plugin.so">
+      ... plugin parameters ...
+    </plugin>
+  </gazebo>
     <link name="base_link">
         <visual>
             <geometry>
