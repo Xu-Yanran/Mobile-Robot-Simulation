@@ -1,0 +1,28 @@
+<launch>
+
+  <arg name="debug" default="false"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <!--<arg name="rvizconfig" default="$(find my_simrobot)/rviz/simrobot_gmapping.rviz"/>-->
+
+  <!-- Start Gazebo with a blank world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <!--<arg name="world_name" value="$(find my_simrobot)/worlds/123.world"/>-->
+    <!--<arg name="world_name" value="$(find my_simrobot)/worlds/my_build_model.world"/>-->
+    <arg name="world_name" value="$(find my_simrobot)/worlds/my_simple_model.world"/>
+    <!--<arg name="world_name" value="$(find my_simrobot)/worlds/my_mase.world"/>-->
+    <!--<arg name="world_name" value="$(find my_simrobot)/worlds/ROS-Academy.world"/>-->
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+
+  <!-- Oh, you wanted a robot? -->
+  <include file="$(find my_simrobot)/launch/include/my_simrobot.launch.xml" />
+
+  <!--  rviz  -->
+  <!--<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/>-->
+  
+</launch>

@@ -1,0 +1,78 @@
+######参数解释#######
+# ~inverted_laser (string, default:"false")， (已经已出在 版本 1.1.1; 用transform data 替换它) 激光器是right side up (scans are ordered CCW),还是 upside down (scans are ordered CW)?
+# ~throttle_scans (int, default: 1)，处理的扫描数据门限，默认每次处理1个扫描数据（可以设置更大跳过一些扫描数据）
+# ~base_frame (string, default:"base_link")，机器人基座坐标系
+# ~map_frame (string, default:"map")，地图坐标系
+# ~odom_frame (string, default:"odom")，里程计坐标系
+# ~map_update_interval (float, default: 5.0)，地图更新频率
+# ~maxUrange (float, default: 80.0)，探测最大可用范围，即光束能到达的范围。
+# ~sigma (float, default: 0.05)，endpoint匹配标准差
+# ~kernelSize (int, default: 1)，用于查找对应的kernel size
+# ~lstep (float, default: 0.05)，平移优化步长
+# ~astep (float, default: 0.05)，旋转优化步长
+# ~iterations (int, default: 5)，扫描匹配迭代步数
+# ~lsigma (float, default: 0.075)，用于扫描匹配概率的激光标准差
+# ~ogain (float, default: 3.0)，似然估计为平滑重采样影响使用的gain
+# ~lskip (int, default: 0)，每次扫描跳过的光束数.
+# ~minimumScore (float, default: 0.0)，为获得好的扫描匹配输出结果，用于避免在大空间范围使用有限距离的激光扫描仪（如5m）出现的jumping pose estimates问题。 当 Scores高达600+，如果出现了该问题可以考虑设定值50。
+# ~srr (float, default: 0.1)，平移时里程误差作为平移函数(rho/rho)
+# ~srt (float, default: 0.2)，平移时的里程误差作为旋转函数 (rho/theta)
+# ~str (float, default: 0.1)，旋转时的里程误差作为平移函数 (theta/rho)
+# ~stt (float, default: 0.2)，旋转时的里程误差作为旋转函数 (theta/theta)
+# ~linearUpdate (float, default: 1.0)，机器人每旋转这么远处理一次扫描
+# ~angularUpdate (float, default: 0.5)，Process a scan each time the robot rotates this far
+# ~temporalUpdate (float, default: -1.0)，如果最新扫描处理比更新慢，则处理1次扫描。该值为负数时候关闭基于时间的更新
+# ~resampleThreshold (float, default: 0.5)，基于重采样门限的Neff
+# ~particles (int, default: 30)，滤波器中粒子数目
+# ~xmin (float, default: -100.0)，地图初始尺寸
+# ~ymin (float, default: -100.0)，地图初始尺寸
+# ~xmax (float, default: 100.0)，地图初始尺寸
+# ~ymax (float, default: 100.0)，地图初始尺寸
+# ~delta (float, default: 0.05)，地图分辨率
+# ~llsamplerange (float, default: 0.01)，于似然计算的平移采样距离
+# ~llsamplestep (float, default: 0.01)，用于似然计算的平移采样步长
+# ~lasamplerange (float, default: 0.005)，用于似然计算的角度采样距离
+# ~lasamplestep (float, default: 0.005)，用于似然计算的角度采样步长
+# ~transform_publish_period (float, default: 0.05)，变换发布时间间隔.
+# ~occ_thresh (float, default: 0.25)，栅格地图栅格值 (i.e., set to 100 in the resultingsensor_msgs/LaserScan).
+# ~maxRange (float)，传感器最大范围。如果在传感器距离范围内没有障碍物应该在地图上显示为自由空间。 maxUrange < 真实传感器最大距离范围 <= maxRange.
+####################################################################
+
+inverted_laser: "false"
+throttle_scan: 1
+base_frame: "base_footprint"
+map_frame: "map"
+odom_frame: "odom"
+map_update_interval: 5.0 # 0.1
+maxUrange: 16.0
+sigma: 0.05
+kernelSize: 1
+lstep: 0.05
+astep: 0.05
+iterations: 5
+lsigma: 0.075
+ogain: 3.0
+lskip: 0
+minimumScore: 0.0
+srr: 0.01
+srt: 0.02
+str: 0.01
+stt: 0.02
+linearUpdate: 1.0
+angularUpdate: 0.5
+temporalUpdate: 3.0
+resampleThreshold: 0.5
+particles: 30
+xmin: -50.0
+ymin: -50.0
+xmax: 50.0
+ymax: 50.0
+delta: 0.05
+llsamplerange: 0.01
+llsamplestep: 0.01
+lasamplerange: 0.005
+lasamplestep: 0.005
+transform_publish_period : 0.05
+occ_thresh: 0.25
+max_Range: 25.0
+
