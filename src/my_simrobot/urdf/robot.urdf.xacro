@@ -9,7 +9,8 @@
   <xacro:include filename="$(find my_simrobot)/urdf/simrobot_description.gazebo"/>
   <xacro:include filename="$(find my_simrobot)/urdf/rplidar_laser.gazebo.xacro" />
 
-  <xacro:include filename="$(find aubo_description)/urdf/aubo_i5_robot_gazebo.urdf.xacro" />
+  <!-- <xacro:include filename="$(find aubo_description)/urdf/aubo_i5_robot_gazebo.urdf.xacro" /> -->
+
   <!-- <xacro:include filename="$(find aubo_description)/urdf/aubo_i5.urdf.xacro" /> -->
   
 

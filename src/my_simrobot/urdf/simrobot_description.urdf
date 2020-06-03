@@ -12,7 +12,7 @@
 
     <link name="base_footprint"/>
 
-    <link name="mobile_link">
+    <link name="base_link">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>

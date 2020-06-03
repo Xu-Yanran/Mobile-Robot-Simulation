@@ -1,7 +1,12 @@
 <launch>
 
   <!-- URDF and TF support -->
+  <!-- <group ns="mobile">
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find my_simrobot)/urdf/robot.urdf.xacro' ns:=mobile" />
+  </group> -->
+
   <param name="robot_description" command="$(find xacro)/xacro.py $(find my_simrobot)/urdf/robot.urdf.xacro" />
+
   <!-- Put a robot in gazebo, make it look pretty -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" 
         args="-urdf -model simrobot -param robot_description"/>
