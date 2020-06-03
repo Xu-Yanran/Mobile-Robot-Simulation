@@ -22,7 +22,12 @@
   <!-- Oh, you wanted a robot? -->
   <include file="$(find my_simrobot)/launch/include/my_simrobot.launch.xml" />
 
-
+  <!-- start grip -->
+  	<group ns="grip">
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find aubo_description)/urdf/aubo_i5_robot_gazebo.urdf.xacro' ns:=grip" />
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.49" respawn="false" output="screen" />
+	</group>
 
 
   <!--  rviz  -->
