@@ -9,6 +9,10 @@
   <xacro:include filename="$(find my_simrobot)/urdf/simrobot_description.gazebo"/>
   <xacro:include filename="$(find my_simrobot)/urdf/rplidar_laser.gazebo.xacro" />
 
+  <xacro:include filename="$(find aubo_description)/urdf/aubo_i5_robot_gazebo.urdf.xacro" />
+  <!-- <xacro:include filename="$(find aubo_description)/urdf/aubo_i5.urdf.xacro" /> -->
+  
+
   <!--<xacro:hokuyo_lx30_laser_gazebo_v0 name="${name}" ros_topic="${ros_topic}" update_rate="${update_rate}" min_angle="${min_angle}" max_angle="${max_angle}" />-->
 
 </robot>

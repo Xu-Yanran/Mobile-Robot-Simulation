@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <robot name="simrobot">
-    <material name="black">
-        <color rgba="0 0 0 1"/>
-    </material>
-    <material name="white">
+    <!-- <material name="black">
+        <color rgba="0 0 0 1"/> -->
+    <!-- </material> -->
+    <!-- <material name="white">
         <color rgba="1 1 1 1"/>
-    </material>
-    <material name="blue">
+    </material> -->
+    <!-- <material name="blue">
         <color rgba="0.0 0.0 0.8 1.0"/>
-    </material>
+    </material> -->
 
     <link name="base_footprint"/>
 
-    <link name="base_link">
+    <link name="mobile_link">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>

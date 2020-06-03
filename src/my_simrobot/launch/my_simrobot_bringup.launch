@@ -22,6 +22,7 @@
   <!-- Oh, you wanted a robot? -->
   <include file="$(find my_simrobot)/launch/include/my_simrobot.launch.xml" />
 
+
   <!--  rviz  -->
   <!--<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/>-->
   
