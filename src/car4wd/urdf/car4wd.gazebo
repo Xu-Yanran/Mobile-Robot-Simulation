@@ -8,10 +8,10 @@
             <legacyMode>false</legacyMode>
             <alwaysOn>true</alwaysOn>
             <updateRate>50</updateRate>
-	    <leftFrontJoint>1</leftFrontJoint>
-	    <rightFrontJoint>4</rightFrontJoint>
-	    <leftRearJoint>2</leftRearJoint>
-	    <rightRearJoint>3</rightRearJoint>
+	    <leftFrontJoint>4</leftFrontJoint>
+	    <rightFrontJoint>1</rightFrontJoint>
+	    <leftRearJoint>3</leftRearJoint>
+	    <rightRearJoint>2</rightRearJoint>
 
             <wheelSeparation>0.455</wheelSeparation>
             <wheelDiameter>0.17</wheelDiameter>

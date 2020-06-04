@@ -21,6 +21,7 @@ shift为提高机器人移动速度
 3. 保存地图　新开终端 rosrun map_server map_saver -f ___/car4wd/map/___（car4wd前面的路径根据实际安装情况,map后横线为保存的地图名）　例如 rosrun map_server map_saver -f ~/catkin_ws/src/car4wd/map/new_map
 
 导航
+roslaunch car4wd sim_navigation_bringup.launch 打开gazebo仿真以及rviz，在rviz里通过最上排绿箭头"2D Nav Goal"设置导航目标点
 
 
 
