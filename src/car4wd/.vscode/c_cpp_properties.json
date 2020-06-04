@@ -1,0 +1,21 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/luminescence/catkin_ws/devel/include",
+        "/home/luminescence/turtlebot/devel/include",
+        "/home/luminescence/kobuki/devel/include",
+        "/home/luminescence/rocon/devel/include",
+        "/opt/ros/kinetic/include",
+        "/home/luminescence/Racecar_Simulation/src/pr2/include",
+        "/home/luminescence/Racecar_Simulation/src/racecar/include",
+        "/usr/include"
+      ],
+      "name": "Linux"
+    }
+  ]
+}

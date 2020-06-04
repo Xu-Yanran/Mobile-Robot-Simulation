@@ -1,0 +1,24 @@
+<launch>
+
+  <!-- URDF and TF support -->
+  <arg name="rvizconfig" default="$(find car4wd)/rviz/car4wd.rviz"/>
+  <param name="robot_description" command="$(find xacro)/xacro.py $(find car4wd)/urdf/car4wd.xacro" />
+  <!-- Put a robot in gazebo, make it look pretty -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" 
+        args="-urdf -model simrobot -param robot_description"/>
+
+ 
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    <param name="publish_frequency" value="20.0"/>
+  </node>
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+
+
+  <!-- To make the interface of simulation identical to real XBot -->
+  <node pkg="nodelet" type="nodelet" name="mobile_base_nodelet_manager" args="manager"/>
+
+  
+
+
+</launch>
