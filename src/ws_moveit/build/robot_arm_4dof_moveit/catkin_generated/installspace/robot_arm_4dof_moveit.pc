@@ -1,0 +1,8 @@
+prefix=/home/picy/ws_moveit/install
+
+Name: robot_arm_4dof_moveit
+Description: Description of robot_arm_4dof_moveit
+Version: 0.3.0
+Cflags: 
+Libs: -L/home/picy/ws_moveit/install/lib 
+Requires: 

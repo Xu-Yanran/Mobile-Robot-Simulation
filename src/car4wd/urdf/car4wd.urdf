@@ -340,6 +340,63 @@
         <child link="rplidar"/>
     </joint>
 
+ <joint name="base_to_camera_joint" type="fixed">
+            <parent link="base_link"/>
+            <child link="usb_camera_link"/>
+            <origin xyz="0.1 0.2 0.22" rpy="0 0 0" /> 
+       </joint>
+
+       <link name="usb_camera_link">
+            <inertial>
+                <mass value="0.1" />
+                <origin xyz="0 0 0" />
+                <inertia ixx="0.01" ixy="0.0" ixz="0.0"
+                         iyy="0.01" iyz="0.0"
+                         izz="0.01" />
+            </inertial>
+
+            <visual>
+                <origin xyz=" 0 0 0 " rpy="0 0 0" />
+                <geometry>
+                    <box size="0.01 0.04 0.04" />
+                </geometry>
+                <material name="Black"/>
+            </visual>
+
+            <collision>
+                <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.01 0.04 0.04" />
+                </geometry>
+            </collision>
+        </link>
+ <link name="left_sonar">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 1.57 0"/>
+        <geometry>
+          <cylinder length="0.01" radius="0.01"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.01" radius="0.01"/>
+        </geometry>
+      </collision>
+            <collision>
+                <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.01 0.04 0.04" />
+                </geometry>
+            </collision>
+        </link>
+ 
+    <joint name="left_sonar_joint" type="fixed">
+        <origin xyz="0.28 0 0.16" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="left_sonar"/>
+    </joint>        
+
  <link
     name="Link0">
     <inertial>
@@ -367,7 +424,7 @@
       <material
         name="">
         <color
-          rgba="17 17 17 1" />
+          rgba="0.066 0.066 0.066 1" />
       </material>
     </visual>
     <collision>
@@ -420,7 +477,7 @@
       <material
         name="">
         <color
-          rgba="243 210 80 1" />
+          rgba="0.9529 0.823 0.313 1" />
       </material>
     </visual>
     <collision>
@@ -473,7 +530,7 @@
       <material
         name="">
         <color
-          rgba="243 210 80 1" />
+          rgba="0.9529 0.823 0.313 1" />
       </material>
     </visual>
     <collision>
@@ -526,7 +583,7 @@
       <material
         name="">
         <color
-          rgba="243 210 80 1" />
+          rgba="0.9529 0.823 0.313 1" />
       </material>
     </visual>
     <collision>
@@ -579,7 +636,7 @@
       <material
         name="">
         <color
-          rgba="243 210 80 1" />
+          rgba="0.9529 0.823 0.313 1" />
       </material>
     </visual>
     <collision>
@@ -632,7 +689,7 @@
       <material
         name="">
         <color
-          rgba="243 210 80 1" />
+          rgba="0.9529 0.823 0.313 1" />
       </material>
     </visual>
     <collision>
@@ -685,7 +742,7 @@
       <material
         name="">
         <color
-          rgba="221 221 221 221" />
+          rgba="0.827 0.827 0.827 1" />
       </material>
     </visual>
     <collision>
@@ -738,7 +795,7 @@
       <material
         name="">
         <color
-          rgba="43 43 43 1" />
+          rgba="0.168 0.168 0.168 1" />
       </material>
     </visual>
     <collision>

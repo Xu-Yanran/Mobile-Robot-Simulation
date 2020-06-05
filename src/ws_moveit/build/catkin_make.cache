@@ -1,0 +1,2 @@
+joint_msg:robot_arm_4dof_description:robot_arm_4dof_moveit:robot_arm_v2:robot_arm_v2_moveit:robot_description
+-DCATKIN_DEVEL_PREFIX=/home/picy/ws_moveit/devel -DCMAKE_INSTALL_PREFIX=/home/picy/ws_moveit/install -G Unix Makefiles
