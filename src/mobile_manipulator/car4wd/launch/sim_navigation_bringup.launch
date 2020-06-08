@@ -1,0 +1,18 @@
+<launch>
+  <!-- robot model -->
+  <!-- <include file="$(find my_simrobot)/launch/my_simrobot_bringup.launch"/> -->
+  <include file="$(find car4wd)/launch/my_simrobot_bringup.launch"/>
+
+  <!-- Map server -->
+  <include file="$(find car4wd)/launch/include/my_map_server.launch.xml"/>
+
+  <!-- Amcl -->
+  <include file="$(find car4wd)/launch/include/my_amcl.launch.xml"/>
+
+  <!-- Move base -->
+  <include file="$(find car4wd)/launch/include/my_move_base.launch.xml"/>
+
+  <!-- rviz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find car4wd)/rviz/simrobot_navigation.rviz" />
+
+</launch>
