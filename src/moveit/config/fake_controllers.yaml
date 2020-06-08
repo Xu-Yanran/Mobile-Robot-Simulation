@@ -1,4 +1,0 @@
-controller_list:
-  - name: fake_armc_controller
-    joints:
-      []

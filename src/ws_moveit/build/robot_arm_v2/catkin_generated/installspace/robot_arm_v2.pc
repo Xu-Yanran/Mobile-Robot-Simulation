@@ -1,8 +1,0 @@
-prefix=/home/picy/ws_moveit/install
-
-Name: robot_arm_v2
-Description: Description of robot_arm_v2
-Version: 1.0.0
-Cflags: 
-Libs: -L/home/picy/ws_moveit/install/lib 
-Requires: 

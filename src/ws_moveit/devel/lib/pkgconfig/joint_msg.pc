@@ -1,8 +1,0 @@
-prefix=/home/picy/ws_moveit/devel
-
-Name: joint_msg
-Description: Description of joint_msg
-Version: 0.0.0
-Cflags: -I/home/picy/ws_moveit/devel/include
-Libs: -L/home/picy/ws_moveit/devel/lib -ljoint_msg
-Requires: roscpp rospy std_msgs message_runtime serial
