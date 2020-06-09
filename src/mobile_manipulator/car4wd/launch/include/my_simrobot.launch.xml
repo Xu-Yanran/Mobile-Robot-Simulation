@@ -18,7 +18,6 @@
   <!-- To make the interface of simulation identical to real XBot -->
   <node pkg="nodelet" type="nodelet" name="mobile_base_nodelet_manager" args="manager"/>
 
-  
 
 
 </launch>

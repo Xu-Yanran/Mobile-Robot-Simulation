@@ -5,10 +5,16 @@
   xmlns:xacro="http://ros.org/wiki/xacro"
   name="robot_urdf.gazebo">
 
-  <xacro:include filename="$(find car4wd)/urdf/car4wd.urdf"/>
+  <xacro:include filename="$(find car4wd)/urdf/car4wd.urdf.xacro"/>
   <xacro:include filename="$(find car4wd)/urdf/car4wd.gazebo"/>
-  <xacro:include filename="$(find car4wd)/urdf/rplidar_laser.gazebo.xacro" />
+  <xacro:include filename="$(find car4wd)/urdf/aubo_i5.urdf.xacro"/>
+  <!--xacro:include filename="$(find car4wd)/urdf/rplidar_laser.gazebo.xacro"/-->
+<xacro:aubo_i5_robot prefix=""/>
+<xacro:car />
 
-  <!--<xacro:hokuyo_lx30_laser_gazebo_v0 name="${name}" ros_topic="${ros_topic}" update_rate="${update_rate}" min_angle="${min_angle}" max_angle="${max_angle}" />-->
-
+  <joint name="world_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_Link"/>
+    <origin xyz="0.0 0.0 0.2" rpy="0.0 0.0 0.0" />
+  </joint>
 </robot>

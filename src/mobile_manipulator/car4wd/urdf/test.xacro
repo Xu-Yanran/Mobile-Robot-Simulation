@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<robot name="robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find car4wd)/urdf/usb_camera.xacro" />
+    <usb_camera />
+
+</robot>

@@ -7,9 +7,11 @@ Panels:
         - /Global Options1
         - /Status1
         - /RobotModel1
-        - /LaserScan1
-        - /Range1
-      Splitter Ratio: 0.5
+        - /RobotModel1/Links1
+        - /RobotModel1/Links1/world1
+        - /TF1
+        - /TF1/Frames1
+      Splitter Ratio: 0.708933711
     Tree Height: 565
   - Class: rviz/Selection
     Name: Selection
@@ -58,96 +60,75 @@ Visualization Manager:
       Collision Enabled: false
       Enabled: true
       Links:
-        1_Link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        2_Link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        3_Link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        4_Link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        Link0:
+        base_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        ee_Link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Link1:
+        f1_Link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Link2:
+        foreArm_Link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Link3:
+        s_Link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Link4:
+        shoulder_Link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Link5:
+        u_Link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Link6:
+        upperArm_Link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Link_grip:
+        w1_Link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        base_footprint:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        base_link:
+        w2_Link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        laser_Link:
+        world:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        wrist1_Link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        left_sonar:
+        wrist2_Link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rplidar:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        usb_camera_link:
+        wrist3_Link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -158,51 +139,72 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
-    - Alpha: 1
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
-        Value: true
-      Axis: Z
-      Channel Name: intensity
-      Class: rviz/LaserScan
-      Color: 255; 255; 255
-      Color Transformer: Intensity
-      Decay Time: 0
+    - Class: rviz/TF
       Enabled: true
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Max Intensity: -999999
-      Min Color: 0; 0; 0
-      Min Intensity: 999999
-      Name: LaserScan
-      Position Transformer: XYZ
-      Queue Size: 10
-      Selectable: true
-      Size (Pixels): 3
-      Size (m): 0.00999999978
-      Style: Flat Squares
-      Topic: /scan
-      Unreliable: false
-      Use Fixed Frame: true
-      Use rainbow: true
-      Value: true
-    - Alpha: 0.5
-      Buffer Length: 1
-      Class: rviz/Range
-      Color: 255; 255; 255
-      Enabled: true
-      Name: Range
-      Queue Size: 100
-      Topic: ""
-      Unreliable: false
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        base_Link:
+          Value: true
+        ee_Link:
+          Value: false
+        f1_Link:
+          Value: false
+        foreArm_Link:
+          Value: false
+        s_Link:
+          Value: false
+        shoulder_Link:
+          Value: false
+        u_Link:
+          Value: false
+        upperArm_Link:
+          Value: false
+        w1_Link:
+          Value: false
+        w2_Link:
+          Value: false
+        world:
+          Value: true
+        wrist1_Link:
+          Value: false
+        wrist2_Link:
+          Value: false
+        wrist3_Link:
+          Value: false
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        world:
+          base_Link:
+            shoulder_Link:
+              s_Link:
+                {}
+              upperArm_Link:
+                f1_Link:
+                  {}
+                foreArm_Link:
+                  u_Link:
+                    {}
+                  wrist1_Link:
+                    w1_Link:
+                      {}
+                    wrist2_Link:
+                      w2_Link:
+                        {}
+                      wrist3_Link:
+                        ee_Link:
+                          {}
+      Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: base_link
+    Fixed Frame: world
     Frame Rate: 30
   Name: root
   Tools:
@@ -223,25 +225,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.20645976
+      Distance: 2.78500986
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.0134521509
-        Y: 0.116016492
-        Z: 0.271108419
+        X: 0
+        Y: 0
+        Z: 0
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.684797168
+      Pitch: 0.405398548
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.91534781
+      Yaw: 3.42543101
     Saved: ~
 Window Geometry:
   Displays:
@@ -259,5 +261,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1200
-  X: 60
-  Y: 60
+  X: 327
+  Y: 123
