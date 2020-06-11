@@ -5,4 +5,4 @@
 4, 拷贝car4wd到src
 5,编译  catkin_make
 6 source devel/setup.bash
-7 roslaunch car4wd  XXXXXXXX.launch
+7. roslaunch car4wd test.launch
