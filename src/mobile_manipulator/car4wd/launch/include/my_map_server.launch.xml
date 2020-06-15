@@ -1,6 +1,6 @@
 <launch>
 
-  <arg name="map_file" default="$(find my_simrobot)/build_maps/my_map_2.yaml"/>
+  <arg name="map_file" default="$(find car4wd)/build_maps/my_map_2.yaml"/>
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)"/>
   
 </launch>
