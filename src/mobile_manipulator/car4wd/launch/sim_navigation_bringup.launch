@@ -9,7 +9,27 @@
   <include file="$(find my_simrobot)/launch/include/my_amcl.launch.xml"/>
 
   <!-- Move base -->
-  <include file="$(find my_simrobot)/launch/include/my_move_base.launch.xml"/>
+  <!-- <include file="$(find my_simrobot)/launch/include/my_move_base.launch.xml"/> -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base">
+        <!-- local planner -->
+         
+        <param name="base_global_planner" value="global_planner/GlobalPlanner"/>  
+        <!-- <param name="base_global_planner" value="SBPLLatticePlanner"/> 
+            <param name="primitive_filename" value="$(find sbpl_lattice_planner)/matlab/mprim/pr2.mprim"/> -->
+         
+        <!-- <param name="base_global_planner" value="navfn/NavfnROS"/>   -->
+        <param name="base_local_planner" value="local_planner/DWALocalPlanner"/>  
+        
+        <!-- <rosparam file="$(find art_racecar)/param/dwa_local_planner_params.yaml" command="load"/> -->
+        <!-- costmap layers -->    
+        <rosparam file="$(find art_racecar)/param/local_costmap_params.yaml" command="load"/>
+        <rosparam file="$(find art_racecar)/param/global_costmap_params.yaml" command="load"/> 
+        <!-- move_base params -->
+        <rosparam file="$(find art_racecar)/param/base_global_planner_params.yaml" command="load"/>
+        <rosparam file="$(find art_racecar)/param/move_base_params.yaml" command="load"/>
+
+       
+    </node>
 
   <!-- rviz -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find my_simrobot)/rviz/simrobot_navigation.rviz" />
