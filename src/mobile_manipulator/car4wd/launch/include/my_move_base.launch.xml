@@ -14,6 +14,6 @@
 
     <remap from="odom" to="$(arg odom_topic)"/>
     <remap from="scan" to="$(arg laser_topic)"/>  
-    <remap from="cmd_vel" to="/cmd_vel_mux/input/navi"/>        
+    <!-- <remap from="cmd_vel" to="/cmd_vel_mux/input/navi"/>         -->
   </node>
 </launch>

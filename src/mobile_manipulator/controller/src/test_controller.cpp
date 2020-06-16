@@ -99,7 +99,7 @@ L1Controller::L1Controller()
     path_sub = n_.subscribe("/move_base_node/NavfnROS/plan", 10, &L1Controller::pathCB, this);
     goal_sub = n_.subscribe("/move_base_simple/goal", 1, &L1Controller::goalCB, this);
     marker_pub = n_.advertise<visualization_msgs::Marker>("car_path", 10);
-    pub_ = n_.advertise<geometry_msgs::Twist>("car/cmd_vel", 1);
+    pub_ = n_.advertise<geometry_msgs::Twist>("cmd_vel", 1);
 
     //Timer
     timer1 = n_.createTimer(ros::Duration((1.0)/controller_freq), &L1Controller::controlLoopCB, this); // Duration(0.05) -> 20Hz

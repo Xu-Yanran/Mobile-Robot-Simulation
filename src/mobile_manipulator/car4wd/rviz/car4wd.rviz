@@ -8,7 +8,6 @@ Panels:
         - /Status1
         - /RobotModel1
         - /LaserScan1
-        - /Range1
       Splitter Ratio: 0.5
     Tree Height: 565
   - Class: rviz/Selection
@@ -137,17 +136,7 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        left_sonar:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         rplidar:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        usb_camera_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -188,16 +177,6 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
-    - Alpha: 0.5
-      Buffer Length: 1
-      Class: rviz/Range
-      Color: 255; 255; 255
-      Enabled: true
-      Name: Range
-      Queue Size: 100
-      Topic: ""
-      Unreliable: false
-      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -223,25 +202,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.20645976
+      Distance: 1.96283686
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.0134521509
-        Y: 0.116016492
-        Z: 0.271108419
+        X: 0
+        Y: 0
+        Z: 0
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.684797168
+      Pitch: 0.694797218
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.91534781
+      Yaw: 1.74036717
     Saved: ~
 Window Geometry:
   Displays:

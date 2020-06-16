@@ -1,5 +1,6 @@
 <launch>
   <!-- robot model -->
+  <!-- <include file="$(find my_simrobot)/launch/my_simrobot_bringup.launch"/> -->
   <include file="$(find car4wd)/launch/my_simrobot_bringup.launch"/>
 
   <!-- Map server -->
@@ -8,22 +9,22 @@
   <!-- Amcl -->
   <include file="$(find car4wd)/launch/include/my_amcl.launch.xml"/>
 
-
+  <!-- <node pkg="controller" type="test_controller" respawn="false" name="art_car_controller" output="screen">    
+  </node> -->
 
   <!-- Move base -->
-  <include file="$(find car4wd)/launch/include/my_move_base.launch.xml"/>
-  <!-- <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-    <rosparam file="$(find my_simrobot)/param/costmap_2d/costmap_common_params.yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find my_simrobot)/param/costmap_2d/costmap_common_params.yaml" command="load" ns="local_costmap" />   
-    <rosparam file="$(find my_simrobot)/param/costmap_2d/global_costmap_params.yaml" command="load" />    
-    <rosparam file="$(find my_simrobot)/param/costmap_2d/local_costmap_params.yaml" command="load" />   
-    <rosparam file="$(find my_simrobot)/param/planner/dwa_local_planner_params.yaml" command="load" />
-    <rosparam file="$(find my_simrobot)/param/planner/global_planner_params.yaml" command="load" />
-    <rosparam file="$(find my_simrobot)/param/planner/navfn_global_planner_params.yaml" command="load" />
+  <!-- <include file="$(find car4wd)/launch/include/my_move_base.launch.xml"/> -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find car4wd)/param/costmap_2d/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find car4wd)/param/costmap_2d/costmap_common_params.yaml" command="load" ns="local_costmap" />   
+    <rosparam file="$(find car4wd)/param/costmap_2d/global_costmap_params.yaml" command="load" />    
+    <rosparam file="$(find car4wd)/param/costmap_2d/local_costmap_params.yaml" command="load" />   
+    <rosparam file="$(find car4wd)/param/planner/dwa_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find car4wd)/param/planner/global_planner_params.yaml" command="load" />
+    <rosparam file="$(find car4wd)/param/planner/navfn_global_planner_params.yaml" command="load" />
+    <!-- <rosparam file="$(find car4wd)/param/move_base/move_base_params.yaml" command="load" /> -->
   </node>
 
-  <node pkg="controller" type="test_controller" respawn="false" name="art_car_controller" output="screen">
-</node> -->
 
   <!-- rviz -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find car4wd)/rviz/simrobot_navigation.rviz" />
