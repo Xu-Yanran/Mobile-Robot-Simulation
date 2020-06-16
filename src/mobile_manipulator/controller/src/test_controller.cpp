@@ -58,7 +58,7 @@ class L1Controller
         nav_msgs::Odometry odom;
         nav_msgs::Path map_path, odom_path;
 
-        double L, Lfw, Lrv, Vcmd, lfw, lrv, steering, u, v;
+        double L, Lfw, Lrv, Vcmd, lfw, lrv, steering, u, v, MAX_ANG;
         double Gas_gain, baseAngle, Angle_gain, goalRadius, ang_kd;
         int controller_freq, baseSpeed;
         bool foundForwardPt, goal_received, goal_reached;
@@ -84,6 +84,8 @@ L1Controller::L1Controller()
     pn.param("Vcmd", Vcmd, 1.0);
     pn.param("lfw", lfw, 0.13);
     pn.param("lrv", lrv, 10.0);
+
+    pn.param("MAX_ANG", MAX_ANG, 2.0);
 
     //Controller parameter
     pn.param("controller_freq", controller_freq, 100);
@@ -402,14 +404,17 @@ ros::Time t_begin = ros::Time::now();
     {
         /*Estimate Steering Angle*/
         double eta = getEta(carPose); 
+        ROS_INFO("eta: %f", eta);
         
         if(foundForwardPt)
         {
             double ang = getSteeringAngle(eta);
             cmd_vel.angular.z = baseAngle + (ang*Angle_gain + (ang-last_ang)*ang_kd);
             last_ang = ang;
-            if (cmd_vel.angular.z > 0.2) {
-                cmd_vel.angular.z = 0.2;
+            if (cmd_vel.angular.z > MAX_ANG) {
+                cmd_vel.angular.z = MAX_ANG;
+            } else if (cmd_vel.angular.z < -MAX_ANG) {
+                cmd_vel.angular.z = -MAX_ANG;
             }
 
             /*Estimate Gas Input*/
@@ -433,7 +438,7 @@ ros::Time t_begin = ros::Time::now();
                 if ((car_run_flag)&&(loop_count < LOOP_COUNT)) 
                 {
 
-                    cmd_vel.linear.x = -0.1;
+                    cmd_vel.linear.x = 0.0;
                     loop_count++;                    
                 }
                 else if(loop_count >= LOOP_COUNT)

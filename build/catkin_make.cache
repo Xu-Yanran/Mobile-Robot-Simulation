@@ -1,0 +1,2 @@
+aubo_robot/aubo_description:aubo_robot/aubo_gazebo:aubo_robot/aubo_i5_moveit_config:mobile_manipulator/car4wd:mobile_manipulator/car4wd_moveit_config:mobile_manipulator/controller:mobile_manipulator/teleop
+-DCATKIN_DEVEL_PREFIX=/home/luminescence/Racecar_Simulation/devel -DCMAKE_INSTALL_PREFIX=/home/luminescence/Racecar_Simulation/install -G Unix Makefiles

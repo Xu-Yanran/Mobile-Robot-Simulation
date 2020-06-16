@@ -1,0 +1,8 @@
+prefix=/home/luminescence/Racecar_Simulation/devel
+
+Name: controller
+Description: Description of controller
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

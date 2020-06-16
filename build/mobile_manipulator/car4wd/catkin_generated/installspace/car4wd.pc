@@ -1,0 +1,8 @@
+prefix=/home/luminescence/Racecar_Simulation/install
+
+Name: car4wd
+Description: Description of car4wd
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

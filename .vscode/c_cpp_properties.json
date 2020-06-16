@@ -1,0 +1,22 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/luminescence/Racecar_Simulation/devel/include",
+        "/home/luminescence/catkin_ws/devel/include",
+        "/home/luminescence/turtlebot/devel/include",
+        "/home/luminescence/kobuki/devel/include",
+        "/home/luminescence/rocon/devel/include",
+        "/opt/ros/kinetic/include",
+        "/home/luminescence/Racecar_Simulation/src/racecar/include",
+        "/home/luminescence/Racecar_Simulation/src/mobile_manipulator/teleop/include",
+        "/usr/include"
+      ],
+      "name": "Linux"
+    }
+  ]
+}
