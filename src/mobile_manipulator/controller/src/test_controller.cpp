@@ -89,14 +89,14 @@ L1Controller::L1Controller()
     pn.param("controller_freq", controller_freq, 100);
     pn.param("AngleGain", Angle_gain, -1.0);
     pn.param("GasGain", Gas_gain, 1.0);
-    pn.param("baseSpeed", baseSpeed, 1470);
-    pn.param("baseAngle", baseAngle, 90.0);
+    pn.param("baseSpeed", baseSpeed, 0);
+    pn.param("baseAngle", baseAngle, 0.0);
     pn.param("angle_kd", ang_kd, 0.0);
     pn.param("odom_pure_pursuit", odom_pure_pursuit, std::string("/odom"));
 
     //Publishers and Subscribers
     odom_sub = n_.subscribe(odom_pure_pursuit, 100, &L1Controller::odomCB, this);
-    path_sub = n_.subscribe("/move_base_node/NavfnROS/plan", 10, &L1Controller::pathCB, this);
+    path_sub = n_.subscribe("/move_base/NavfnROS/plan", 10, &L1Controller::pathCB, this);
     goal_sub = n_.subscribe("/move_base_simple/goal", 1, &L1Controller::goalCB, this);
     marker_pub = n_.advertise<visualization_msgs::Marker>("car_path", 10);
     pub_ = n_.advertise<geometry_msgs::Twist>("cmd_vel", 1);
@@ -111,7 +111,7 @@ L1Controller::L1Controller()
     foundForwardPt = false;
     goal_received = false;
     goal_reached = false;
-    cmd_vel.linear.x = 1500; // 1500 for stop
+    cmd_vel.linear.x = 0; // 1500 for stop
     cmd_vel.angular.z = baseAngle;
 
     //Show info
@@ -408,6 +408,9 @@ ros::Time t_begin = ros::Time::now();
             double ang = getSteeringAngle(eta);
             cmd_vel.angular.z = baseAngle + (ang*Angle_gain + (ang-last_ang)*ang_kd);
             last_ang = ang;
+            if (cmd_vel.angular.z > 0.2) {
+                cmd_vel.angular.z = 0.2;
+            }
 
             /*Estimate Gas Input*/
             if(!goal_reached)
@@ -415,6 +418,9 @@ ros::Time t_begin = ros::Time::now();
                 //double u = getGasInput(carVel.linear.x);
                 //cmd_vel.linear.x = baseSpeed - u;
                 cmd_vel.linear.x = 25*Vcmd+baseSpeed;
+                if (cmd_vel.linear.x > 0.2) {
+                    cmd_vel.linear.x = 0.2;
+                }
                 //ROS_INFO(" Gas = %.2f      Steering angle = %.2f",cmd_vel.linear.x,cmd_vel.angular.z);
                 car_run_flag = 1;
             }
@@ -427,19 +433,19 @@ ros::Time t_begin = ros::Time::now();
                 if ((car_run_flag)&&(loop_count < LOOP_COUNT)) 
                 {
 
-                    cmd_vel.linear.x = 1300;
+                    cmd_vel.linear.x = -0.1;
                     loop_count++;                    
                 }
                 else if(loop_count >= LOOP_COUNT)
                 {
                     car_run_flag = 0;
                     loop_count=0;
-                    cmd_vel.linear.x=1500;
+                    cmd_vel.linear.x=0;
                     /* code */
                 }
                 if(car_run_flag==0)
                 {
-                    cmd_vel.linear.x=1500;
+                    cmd_vel.linear.x=0;
                 }   
     }
     pub_.publish(cmd_vel);
