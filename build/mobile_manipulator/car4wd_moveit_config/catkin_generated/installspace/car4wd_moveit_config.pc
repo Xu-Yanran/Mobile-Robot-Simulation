@@ -1,8 +1,0 @@
-prefix=/home/luminescence/Racecar_Simulation/install
-
-Name: car4wd_moveit_config
-Description: Description of car4wd_moveit_config
-Version: 0.3.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

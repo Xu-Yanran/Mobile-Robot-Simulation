@@ -1,8 +1,0 @@
-prefix=/home/luminescence/Racecar_Simulation/install
-
-Name: aubo_i5_moveit_config
-Description: Description of aubo_i5_moveit_config
-Version: 0.3.7
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

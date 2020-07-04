@@ -1,8 +1,0 @@
-prefix=/home/luminescence/Racecar_Simulation/install
-
-Name: teleop
-Description: Description of teleop
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

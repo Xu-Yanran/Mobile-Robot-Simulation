@@ -1,8 +1,0 @@
-<launch>
-  <arg name="scan_topic"  default="scan" />
-
-  <node pkg="amcl" type="amcl" name="amcl" output="screen">
-    <rosparam file="$(find car4wd)/param/amcl/amcl_params.yaml" command="load" />
-    <remap from="scan" to="$(arg scan_topic)"/>           
-  </node>
-</launch>
