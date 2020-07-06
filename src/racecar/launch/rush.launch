@@ -35,8 +35,8 @@
           args="-urdf -model shcrobot -param robot_description -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos)"/> 
 
 		<!--controller node-->
-	<!-- <node pkg="racecar" type="control_plugin.py" respawn="false" name="racecar_controller" output="screen">
-	</node> -->
+	<node pkg="racecar" type="control_plugin.py" respawn="false" name="racecar_controller" output="screen">
+	</node>
 
 
 </launch>

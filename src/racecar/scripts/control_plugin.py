@@ -17,7 +17,8 @@ from nav_msgs.msg import Odometry
 
 # vehicle name
 
-car_name = str(sys.argv[1])
+# car_name = str(sys.argv[1])
+car_name = 'racecar'
 
 # subscriber topics
 
